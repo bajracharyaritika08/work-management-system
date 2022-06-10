@@ -1,4 +1,4 @@
-<?php require('connection/config.php')?>
+<?php require('../connection/config.php')?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -83,23 +83,38 @@ input[type=submit]:hover {
 }
 
 .flex-item-left {
-  background-color: #9E9E9E;
+  background-color: transparent;
   padding: 10px;
   flex: 33.33%;
   margin:20px;
+  border-style:solid;
+  border-color:grey;
+  height:150px;
+  border-radius:10px;
+  color:grey;
 }
 
 .flex-item-right {
-  background-color: #9E9E9E;
+  background-color: transparent;
   padding: 10px;
   flex: 33.33%;
   margin:20px;
+  border-style:solid;
+  border-color:grey;
+  height:150px;
+  border-radius:10px;
+  color:grey;
 }
 .flex-item-middle{
-  background-color: #9E9E9E;
+  background-color: transparent;
   padding: 10px;
   flex: 33.33%;
   margin:20px;
+  border-style:solid;
+  border-color:grey;
+  height:150px;
+  border-radius:10px;
+  color:grey;
 
 }
 @media (max-width: 800px) {
@@ -112,7 +127,7 @@ input[type=submit]:hover {
 
 <body>
     
-    <?php include('inc/sidebar.php')?>
+    <?php include('../inc/sidebar.php')?>
     <section class="dashboard" id="dasbboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
@@ -139,7 +154,7 @@ input[type=submit]:hover {
             </div>          
         </div> 
     </section>    
-    <script src="assets/js/admin.js"></script>
+    <script src="../assets/js/admin.js"></script>
     </body>
 
 </html>

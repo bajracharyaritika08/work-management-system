@@ -1,4 +1,4 @@
-<?php require('connection/config.php')?>
+<?php require('../connection/config.php')?>
 
 <!-- To show the data into the khali fields when user visits edit page -->
 <?php
@@ -25,15 +25,19 @@ if(isset($_GET['id'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <title>Admin Dashboard Panel</title>
 </head>
-
+<style>
+    label{
+        color:grey;
+    }
+</style>
 <body>
-    <?php include('inc/sidebar.php')?>
+    <?php include('../inc/sidebar.php')?>
     <section class="dashboard" id="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
@@ -57,10 +61,11 @@ if(isset($_POST['submit'])){
     $details = $_POST['details'];
     $deadline = $_POST['deadline'];
     $status = $_POST['status'];
+  
 
-    if($title!="" && $priority!="" && $details!="" && $deadline!="" && $status!=""){
+    if($title!="" && $priority!="" && $details!="" && $deadline!="" && $status!="" ){
     //Update query yeta lekheko 
-    $edit_query ="UPDATE tasks SET title='$title', priority='$priority', details='$details', deadline='$deadline', status='$status' WHERE id=$id";
+    $edit_query ="UPDATE tasks SET title='$title', priority='$priority', details='$details', deadline='$deadline',status='$status' WHERE id=$id";
     $edit_result= mysqli_query($conn,$edit_query);
     if($edit_result){
         echo "Task Updated successufuly";
@@ -76,7 +81,7 @@ if(isset($_POST['submit'])){
 <form action="#" method="POST" enctype="multipart/form-data" style="color:white;padding:20px; >
     <label for="tasktitle">Task Title:</label>
     <input type="text" name="title" required value="<?php echo $title;?>"><br><br>
-    <label for="tasktitle">Task Priority:</label>
+    <label for="taskpriority">Task Priority:</label>
     <select name="priority" id="">
         <?php
             if($priority=="Normal"){
@@ -104,6 +109,7 @@ if(isset($_POST['submit'])){
     <textarea name="details" id="" cols="10" rows="5"  required><?php echo $details; ?></textarea><br><br>
     <label for="tasktitle">Task Deadline:</label>
     <input type="date" name="deadline"  value="<?php echo $deadline;?>" required><br><br>
+    
     <label for="tasktitle">Status:</label>
     <select name="status" id="">
     <?php
@@ -144,7 +150,7 @@ if(isset($_POST['submit'])){
             </div> 
                 </section>
         </div>
-    <script src="assets/js/admin.js"></script>
+    <script src="../assets/js/admin.js"></script>
     </body>
 
 </html>

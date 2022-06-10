@@ -1,19 +1,19 @@
-<?php require('connection/config.php')?>
+<?php require('../connection/config.php')?>
 <?php
 //When a create a task form is submitted
 if(isset($_POST['submit'])){
-    $leave_title = $_POST['title'];
-    $leave_details = $_POST['details'];
-    $from = $_POST['from'];
-    $upto = $_POST['to'];
-
-    if($leave_title!="" && $leave_details!="" && $from!="" && $upto!=""){
+    $title = $_POST['title'];
+    $priority = $_POST['priority'];
+    $details = $_POST['details'];
+    $deadline = $_POST['deadline'];
+    $assigned_to =$_POST['assigned_to'];
+    if($title!="" && $priority!="" && $details!="" && $deadline!="" && $assigned_to!=""){
     //Insert into query pani ho 
-    $create_query="INSERT INTO leave_records(leave_id,leave_details,from_when,upto) VALUES ('$leave_title','$leave_details','$from','$upto')";
+    $create_query="INSERT INTO tasks(title,priority,details,deadline,assigned_to) VALUES ('$title','$priority','$details','$deadline','$assigned_to')";
     //result vane variable ma execute garounay
     $create_result= mysqli_query($conn,$create_query);
     if($create_result){
-        echo header('Location: leave.php?msg=csuccess');
+        echo header('Location: managetasks.php?msg=csuccess');
     }
     else{
         echo "Couldn't perform the requested task.";
@@ -31,11 +31,11 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <title>Leave Dashboard Panel</title>
+    <title>Admin Dashboard Panel</title>
 </head>
 <style>
 input[type=text], select, textarea {
@@ -44,8 +44,18 @@ input[type=text], select, textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+  background-color:transparent;
+  color:grey;
 }
-
+input[type=date] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  background-color:transparent;
+  color:grey;
+}
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
@@ -101,7 +111,7 @@ input[type=submit]:hover {
 </style>
 <body>
     
-    <?php include('userinc/sidebar.php')?>
+    <?php include('../inc/sidebar.php')?>
     <section class="dashboard" id="dasbboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
@@ -111,14 +121,16 @@ input[type=submit]:hover {
         <div class="dash-content">
             <div class="overview">
                 <div class="title">
-                    <i class="uil  uil-postcard"></i>
-                    <span class="text">Apply for Leave</span>
+                    <i class="uil uil-tachometer-fast-alt"></i>
+
+                    
+                    <span class="text">Create Task</span>
             </div>
             <div class="container">
                 <form action="#" method="POST" enctype="multipart/form-data"  style="color:grey;">
                 <div class="row">
                     <div class="col-25">
-                        <label for="tasktitle">Reason for Leave:</label>
+                        <label for="tasktitle">Task Title:</label>
                         </div>
                         <div class="col-75">
                         <input type="text" name="title" required>
@@ -126,7 +138,32 @@ input[type=submit]:hover {
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="reasons">Reasons for leave:</label>
+                        <label for="tasktitle">Task Priority:</label>
+                        </div>
+                        <div class="col-75">
+                        <select name="priority" id="">
+                            <option value="High">High</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Low">Low</option>
+                        </select >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="tasktitle">Assigned To:</label>
+                        </div>
+                        <div class="col-75">
+                        <select name="assigned_to" id="">
+                            <option value="Group A">Group A</option>
+                            <option value="Group B">Group B</option>
+                            <option value="Group C">Group C</option>
+                            <option value="Group D">Group D</option>
+                        </select >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="tasktitle">Task Details:</label>
                         </div>
                         <div class="col-75">
                         <textarea name="details" id="" cols="10" rows="5" required></textarea>
@@ -134,18 +171,10 @@ input[type=submit]:hover {
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="tasktitle">From:</label>
+                        <label for="tasktitle">Task Deadline:</label>
                         </div>
                         <div class="col-75">
-                        <input type="date" name="from" required><br><br>
-                          </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="tasktitle">To:</label>
-                        </div>
-                        <div class="col-75">
-                        <input type="date" name="to" required><br><br>
+                        <input type="date" name="deadline" required><br><br>
                         <button type="submit" name="submit" class="submit-btn" style="background-color:#029609;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">Submit</button>
                     </div>
                 </div>
@@ -173,7 +202,7 @@ input[type=submit]:hover {
                 </section>
         </div>
        
-    <script src="assets/js/admin.js"></script>
+    <script src="../assets/js/admin.js"></script>
     </body>
 
 </html>

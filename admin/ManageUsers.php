@@ -1,4 +1,4 @@
-<?php require('connection/config.php')?>
+<?php require('../connection/config.php')?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Users</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -90,15 +90,16 @@ button a{
     text-decoration: none;
     color:grey;
 }
+
 </style>
 <body>
-<?php include('inc/sidebar.php')?>
+<?php include('../inc/sidebar.php')?>
 <section class="dashboard" id="dasbboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
             <div class="search-box">
                 <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
+                <input type="text" placeholder="Search here..." name="search" id="search" onkeyup="searchFun()">
             </div>
         </div>
         <div class="dash-content">
@@ -109,9 +110,12 @@ button a{
             </div>
             <div>
                 <button class="newuser"><a href="Registration.php">Add a new user.</a></button>
-            </div>   
-            <span>Active User</span>
-            <table style="width:100%; color:grey;" border="2px" >
+            </div>   <br>
+            <span style="color:green;font-size:larger;">Active User</span>
+            <br><br>
+                
+            <div style="overflow-x:auto;">
+            <table style="width:100%; color:grey;border-collapse: collapse;" border="1px" >
         <thead>
             <tr>
                 <th>S.N</th>
@@ -119,6 +123,7 @@ button a{
                 <th>Age</th>
                 <th>Permanent</th>
                 <th>Gender</th>
+                <th>User Type</th>
                 <th>Email</th>
                 <th>Joined Date</th>
                 <th>Username</th>
@@ -133,6 +138,7 @@ button a{
                 <th>Age</th>
                 <th>Permanent</th>
                 <th>Gender</th>
+                <th>User Type</th>
                 <th>Email</th>
                 <th>Joined Date</th>
                 <th>Username</th>
@@ -141,7 +147,7 @@ button a{
         </tfoot>
         <tbody>
         <?php
-            $select_query ="SELECT * FROM registration ORDER BY created_at DESC";
+            $select_query ="SELECT * FROM registration ORDER BY reg_id DESC";
             $select_result =mysqli_query($conn, $select_query);
             $count = 0;
             while($data = mysqli_fetch_array($select_result))
@@ -154,15 +160,15 @@ button a{
                 <td><?php echo $data['age'];?></td>
                 <td><?php echo $data['address'];?></td>
                 <td><?php echo $data['gender'];?></td>
+                <td><?php echo $data['usertype'];?></td>
                 <td><?php echo $data['email'];?></td>
                 <td><?php echo $data['joined_date'];?></td>
                 <td><?php echo $data['username'];?></td>
                 <td><?php echo $data['password'];?></td>
                 
-                <td><button type="button" name> <?php echo $data['status'];?>  </button></td>
-                <td>
-                    <a href="edittask.php?id=<?php echo $data ['id']; ?>"><button style="background-color:#106399;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">EDIT</button></a><br><br>
-                    <a href="process/deletetask.php?id=<?php echo $data ['id'];?>"><button style="background-color:#630700;padding:10px 18px;border-radius:5px;color:white; cursor: pointer;">Delete</button></a>
+               <td>
+                    <a href="EditUser.php?id=<?php echo $data ['reg_id']; ?>"><button style="background-color:#106399;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">EDIT</button></a><br><br>
+                    <a href="../process/deleteusers.php?reg_id=<?php echo $data ['reg_id'];?>"><button style="background-color:#630700;padding:10px 18px;border-radius:5px;color:white; cursor: pointer;">Delete</button></a>
                 </td>
             </tr>
             <?php
@@ -173,9 +179,24 @@ button a{
       
     
 </table>
+          </div>
             </div>    
                 </section>
         </div> 
-<script src="assets/js/admin.js"></script>
+        <!-- <script>
+        //Here starts the JS code.
+        const searchInput = document.getElementById("search");
+        const rows = document.querySelectorAll("tbody td");
+        console.log(rows);
+        searchInput.addEventListener("keyup", function(event) {
+            const q = event.target.value.toLowerCase();
+            rows.forEach((row) => {
+                row.querySelector("td").textContent.toLowerCase().startsWith(q) ?
+                    (row.style.display = "table-row") :
+                    (row.style.display = "none");
+            });
+        });
+    </script> -->
+<script src="../assets/js/admin.js"></script>
 </body>
 </html>

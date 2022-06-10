@@ -151,3 +151,8 @@ form .pass-link a:hover,
 form .signup-link a:hover {
     text-decoration: underline;
 }
+
+select {
+    color: #262626;
+    padding-left: 25px;
+}

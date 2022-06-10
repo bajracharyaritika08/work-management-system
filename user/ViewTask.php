@@ -1,4 +1,4 @@
-<?php require('connection/config.php')?>
+<?php require('../connection/config.php')?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <?php include('userinc/sidebar.php')?>
+    <?php include('../userinc/sidebar.php')?>
     <section class="dashboard" id="dasbboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
@@ -89,7 +89,7 @@
         </div>
 
        
-    <script src="assets/js/admin.js"></script>
+    <script src="../assets/js/admin.js"></script>
     </body>
 
 </html>

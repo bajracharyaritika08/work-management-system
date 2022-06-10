@@ -27,7 +27,7 @@ if ($user_id == 1){
                     </a>
                 </li>
                 <li>
-                    <a href="viewtask.php">
+                    <a href="ViewTask.php">
                         <i class="uil uil-files-landscapes"></i>
                         <span class="link-name">View Task</span>
                     </a>
@@ -35,7 +35,7 @@ if ($user_id == 1){
                 <li>
                     <a href="leave.php">
                     <i class="uil uil-location-pin-alt"></i>
-                        <span class="link-name">Apply For Leave</span>
+                        <span class="link-name">Leaves</span>
                     </a>
                 </li>
                 <li>

@@ -1,4 +1,4 @@
-<?php require('connection/config.php')?>
+<?php require('../connection/config.php')?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <?php include('inc/sidebar.php')?>
+    <?php include('../inc/sidebar.php')?>
     <section class="dashboard" id="dasbboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
@@ -31,8 +31,8 @@
                     <i class="uil uil-tachometer-fast-alt"></i>
                     <span class="text">Manage Tasks</span>
             </div>
-
-<table style="width:100%; color:grey;" border="2px" >
+            <div style="overflow-x:auto;">
+<table style="width:100%; color:grey;border-collapse: collapse;" border="2px" >
         <thead>
             <tr>
                 <th>S.N</th>
@@ -40,6 +40,7 @@
                 <th>Task Priority</th>
                 <th>Task Details</th>
                 <th>Deadline</th>
+                <th>Assigned To</th>
                 <th>Task Status</th>
                 <th>Action</th>
             </tr>
@@ -52,6 +53,7 @@
                 <th>Task Priority</th>
                 <th>Task Details</th>
                 <th>Deadline</th>
+                <th>Assigned To</th>
                 <th>Task Status</th>
                 <th>Action</th>
             </tr>
@@ -71,6 +73,7 @@
                 <td><?php echo $data['priority'];?></td>
                 <td><?php echo $data['details'];?></td>
                 <td><?php echo $data['deadline'];?></td>
+                <td><?php echo $data['assigned_to'];?></td>
                 
                 <td><button type="button" name> <?php echo $data['status'];?>  </button></td>
                 <td>
@@ -87,7 +90,7 @@
     
 </table>
             
-                            
+        </div>               
             </div>
                     
                     
@@ -95,7 +98,7 @@
         </div>
 
        
-    <script src="assets/js/admin.js"></script>
+    <script src="../assets/js/admin.js"></script>
     </body>
 
 </html>
