@@ -78,7 +78,7 @@
                 <td><button type="button" name> <?php echo $data['status'];?>  </button></td>
                 <td>
                     <a href="edittask.php?id=<?php echo $data ['id']; ?>"><button style="background-color:#106399;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">EDIT</button></a><br><br>
-                    <a href="process/deletetask.php?id=<?php echo $data ['id'];?>"><button style="background-color:#630700;padding:10px 18px;border-radius:5px;color:white; cursor: pointer;">Delete</button></a>
+                    <a href="../process/deletetask.php?id=<?php echo $data ['id'];?>"><button style="background-color:#630700;padding:10px 18px;border-radius:5px;color:white; cursor: pointer;">Delete</button></a>
                 </td>
             </tr>
             <?php

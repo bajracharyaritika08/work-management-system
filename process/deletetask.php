@@ -6,10 +6,10 @@ if(isset($_GET['id']))
     $delete_query ="DELETE FROM tasks WHERE id=$id";
     $delete_result = mysqli_query($conn,$delete_query);
     if($delete_result){
-        echo header ('Location: ../managetasks.php?msg=dsuccess');
+        echo header ('Location: ../admin/managetasks.php?msg=dsuccess');
     }
     else{
-        echo header('Location: ../managetasks.php?msg=derror');
+        echo header('Location: ../admin/managetasks.php?msg=derror');
     }
 }
 

@@ -39,7 +39,7 @@ if ($user_id == 1){
                     </a>
                 </li>
                 <li>
-                    <a href="ManageUsers.php">
+                    <a href="ManageUser.php">
                     <i class="uil uil-comments"></i>
                         
                         <span class="link-name">User Profile</span>

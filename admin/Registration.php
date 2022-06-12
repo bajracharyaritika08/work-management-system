@@ -130,7 +130,7 @@ if(isset($_POST['submit'])){
     if($create_result){
         echo '<span style="color:#005700;text-align:center;">Congratulation! A new user added successfully.</span>';
         ?>
-        <button class="newuser"><a href="ManageUsers.php">View User.</a></button>
+        <button class="newuser"><a href="ManageUser.php">View User.</a></button>
         <?php
     }
     else{
