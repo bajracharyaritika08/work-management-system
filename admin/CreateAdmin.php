@@ -2,14 +2,12 @@
 <?php
 //When a create a task form is submitted
 if(isset($_POST['submit'])){
-    $title = $_POST['title'];
-    $priority = $_POST['priority'];
-    $assigned_to =$_POST['assigned_to'];
-    $details = $_POST['details'];
-    $deadline = $_POST['deadline'];
-    if($title!="" && $priority!="" && $assigned_to!="" && $details!="" && $deadline!="" ){
+    $email = $_POST['email'];
+    $passwords = $_POST['passwords'];
+    $admin_department =$_POST['admin_department'];
+    if($email!="" && $passwords!="" && $admin_department!="" ){
     //Insert into query pani ho 
-    $create_query="INSERT INTO tasks(title, priority, assigned_to, details, deadline) VALUES ('$title','$priority','$assigned_to','$details','$deadline')";
+    $create_query="INSERT INTO admin (email, passwords, admin_department) VALUES ('$email','$passwords','$admin_department')";
     //result vane variable ma execute garounay
     $create_result= mysqli_query($conn,$create_query);
     if($create_result){
@@ -154,18 +152,10 @@ input[type=submit]:hover {
                         </div>
                         <div class="col-75">
                         <select name="assigned_to" id="">
-                            <option value="All">All</option>
-                            <option value="Graphic Designing">Graphic Designing</option>
-                            <option value="React Developers">React Developers </option>
-                            <option value="MERN STACK">MERN STACK</option>
-                            <option value="ANGULAR JS/ Vue JS">ANGULAR JS/ Vue JS</option>
-                            <option value="Django Team">Django Team</option>
-                            <option value="Digital Marketing">Digital Marketing</option>
-                            <option value="Team Youtube">Team Youtube</option>
-                            <option value="Account Department">Account Department</option>
-                            <option value="Front Desk Team">Front Desk Team</option>
-                            <option value="Call Center Team">Call Center Team</option>
-                            <option value="React Native / Flutter ">React Native / Flutter </option>
+                            <option value="Group A">Group A</option>
+                            <option value="Group B">Group B</option>
+                            <option value="Group C">Group C</option>
+                            <option value="Group D">Group D</option>
                         </select >
                     </div>
                 </div>
@@ -186,20 +176,7 @@ input[type=submit]:hover {
                         <button type="submit" name="submit" class="submit-btn" style="background-color:#029609;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">Submit</button>
                     </div>
                 </div>
-<!-- 
-                            <label for="tasktitle">Task Title:</label>
-                            <input type="text" name="title" required><br><br>
-                            <label for="tasktitle">Task Priority:</label>
-                            <select name="priority" id="">
-                            <option value="High">High</option>
-                            <option value="Normal">Normal</option>
-                            <option value="Low">Low</option>
-                            </select ><br><br>
-                            <label for="tasktitle">Task Details:</label>
-                            <textarea name="details" id="" cols="10" rows="5" required></textarea><br><br>
-                            <label for="tasktitle">Task Deadline:</label>
-                            <input type="date" name="deadline" required><br><br>
-                            <button type="submit" name="submit">Submit</button> -->
+
                 </form>
 </div>          
 

@@ -42,20 +42,13 @@ if ($user_id == 1){
                     <a href="ManageUser.php">
                     <i class="uil uil-comments"></i>
                         
-                        <span class="link-name">User Profile</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="Calendar.php">
-                    <i class="uil uil-location-pin-alt"></i>
-                        <span class="link-name">Calendar</span>
+                        <span class="link-name">Manage User </span>
                     </a>
                 </li>
                 <li>
-                    <a href="calendar.php">
-                    <i class="uil uil-location-pin-alt"></i>
-                        <span class="link-name">Leaves Requests</span>
+                    <a href="ManageAdmin.php">
+                    <i class="uil  uil-shield-exclamation"></i>
+                        <span class="link-name">Manage Admin </span>
                     </a>
                 </li>
                 <li>
@@ -67,7 +60,7 @@ if ($user_id == 1){
             </ul>
             <ul class="logout-mode">
                 <li>
-                    <a href="index.php">
+                    <a href="../index.php">
                         <i class="uil uil-signout"></i>
                         <span class="link-name">Logout</span>
                     </a>

@@ -169,18 +169,17 @@ button a {
         <div class="dash-content">
             <div class="overview">
                 <div class="title">
-                    <i class="uil  uil-user-plus"></i>
-                    <span class="text">Manage Users</span>
+                <i class="uil  uil-shield-exclamation"></i>
+                    <span class="text">Manage Admin </span>
             </div>
             <div>
-                <button class="newuser"><a href="Registration.php">Add a new user.</a></button>
+                <button class="newuser"><a href="AdminRegister.php">Add a New Supervisor <i class="uil  uil-shield-exclamation"></i>.</a></button>
             </div>   <br>
-            <span style="color:red;font-size:larger;">Notice! Once you add a new user s/he can have access to view the assigned work.</span><br> <br>
-
-            <span style="color:green;font-size:larger;">Active Employees</span>
+            <span style="color:red;font-size:larger;">Notice! Once you add a new supervisor s/he will have the same previliage as you have.</span><br> <br>
+            <span style="color:green;font-size:larger;">Active Supervisors</span>
             <br><br>
             <?php
-            $select_query ="SELECT * FROM registration ORDER BY reg_id DESC";
+            $select_query ="SELECT * FROM admins ORDER BY admin_id DESC";
             $select_result =mysqli_query($conn, $select_query);
             $count = 0;
             while($data = mysqli_fetch_array($select_result))
@@ -198,7 +197,7 @@ button a {
                         <div class="column" style="background-color:transparent;text-align:left;font-size:large;"><br>
                             <p>Full Name:<?php echo $data['fullname'];?></p><br>
                             <p>Joined Date: <?php echo $data['joined_date'];?></p><br>
-                            <p>Username:<?php echo $data['username'];?></p>
+                            <p>Username:<?php echo $data['email'];?></p>
                         </div>
                         <div class="column" style="background-color:transparent;font-size:large;">
                         <p>Modify User</p><br>

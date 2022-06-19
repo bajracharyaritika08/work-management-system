@@ -2,9 +2,9 @@
 
 <!-- To show the data into the khali fields when user visits edit page -->
 <?php
-if(isset($_GET['reg_id'])){
-    $reg_id = $_GET['reg_id'];
-    $show_query= "SELECT * FROM registration WHERE id=$id";
+if(isset($_GET['id'])){
+    $reg_id = $_GET['id'];
+    $show_query= "SELECT * FROM registration WHERE reg_id=$reg_id";
     $show_result = mysqli_query($conn,$show_query);
     $row = $show_result->fetch_assoc(); 
     //row vane euta asociative array ma we store.
@@ -59,6 +59,7 @@ if(isset($_GET['reg_id'])){
 <?php
 //When a create a task form is submitted
 if(isset($_POST['submit'])){
+    
     $fullname = $_POST['fullname'];
     $age = $_POST['age'];
     $address = $_POST['address'];
@@ -71,7 +72,7 @@ if(isset($_POST['submit'])){
 
     if($fullname!="" && $age!="" && $address!="" && $gender!="" && $email!=""  && $joined_date!=""  && $username!=""  && $password!=""){
     //Update query yeta lekheko 
-    $edit_query ="UPDATE register SET fullname='$fullname', age='$age', address='$address', gender='$gender',email='$email',joined_date='$joined_date',username='$username',password='$password' WHERE reg_id=$reg_id";
+    $edit_query ="UPDATE registration SET fullname='$fullname', age='$age', address='$address', gender='$gender',email='$email',joined_date='$joined_date',username='$username',password='$password' WHERE reg_id=$reg_id ";
     $edit_result= mysqli_query($conn,$edit_query);
     if($edit_result){
         echo "Task Updated successufuly";
@@ -90,7 +91,7 @@ if(isset($_POST['submit'])){
                         <label for="fullname">Full Name:</label>
                         </div>
                         <div class="col-75">
-                        <input type="text" name="fullname" required value="<?php echo $fullname;?>">
+                        <input type="text" name="fullname" required value="<?php echo $fullname?>">
                     </div>
                 </div><br>
                 <div class="row">
@@ -155,6 +156,7 @@ if(isset($_POST['submit'])){
                 </div>
                 <button type="submit" name="submit" class="submit-btn" style="background-color:#004f00;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">Submit</button>
             </div>
+            
                 </section>
         </div>
     <script src="../assets/js/admin.js"></script>

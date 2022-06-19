@@ -4,12 +4,13 @@
         $email =$_POST['email'];
         $password =$_POST['password'];
 
-        $query ="SELECT * From registration where email= '$email' and password = '$password'";
+        $query ="SELECT * From admin where email= '$email' and password = '$password'";
         $result = mysqli_query($conn, $query);
-        $row = $result ->fetch_assoc();
-        $count = mysqli_row_count($row);
-        if(count == 1){
-            echo header("location ")
+        $count = mysqli_num_rows($result);
+        if($count == 1){
+            echo header("location : ../admin/DashBoard.php");
+        }else{ 
+            echo header("Location : ../index.php?msg=loginerror");   
         }
     }
 ?>

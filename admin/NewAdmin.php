@@ -190,17 +190,9 @@ if(isset($_POST['submit'])){
                         </div>
                         <div class="col-75">
                         <select name="groupmember" id="">
-                        <option value="Graphic Designing">Graphic Designing</option>
-                            <option value="React Developers">React Developers </option>
-                            <option value="MERN STACK">MERN STACK</option>
-                            <option value="ANGULAR JS/ Vue JS">ANGULAR JS/ Vue JS</option>
-                            <option value="Django Team">Django Team</option>
-                            <option value="Digital Marketing">Digital Marketing</option>
-                            <option value="Team Youtube">Team Youtube</option>
-                            <option value="Account Department">Account Department</option>
-                            <option value="Front Desk Team">Front Desk Team</option>
-                            <option value="Call Center Team">Call Center Team</option>
-                            <option value="React Native / Flutter ">React Native / Flutter </option>
+                            <option value="Group A">Group A</option>
+                            <option value="Group B">Group B</option>
+                            <option value="Group C">Group C</option>
                         </select >
                     </div>
                 </div><br>

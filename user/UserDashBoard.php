@@ -1,4 +1,10 @@
 <?php require('../connection/config.php')?>
+<?php
+session_start();
+if(isset($_SESSION['email'])){
+
+
+?>
 
 
 
@@ -121,6 +127,18 @@ button a{
             </div>    
                 </section>
         </div> 
+        <?php
+        }
+        ?>
+
+        <?php
+        if(!isset($_SESSION['email'])){
+          header ('Location : UserDashboard.php');
+        ?>
+
+        <?php
+        }
+        ?>
     <script src="../assets/js/admin.js"></script>
     </body>
 

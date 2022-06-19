@@ -113,17 +113,14 @@ button a {
 //When a create a task form is submitted
 if(isset($_POST['submit'])){
     $fullname = $_POST['fullname'];
-    $age = $_POST['age'];
-    $address = $_POST['address'];
     $gender = $_POST['gender'];
-    $groupmember = $_POST['groupmember'];
+    $teamleader = $_POST['teamleader'];
     $email = $_POST['email'];
-    $joined_date = $_POST['joined_date'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-    if($fullname!="" && $age!="" && $address!="" && $gender!="" && $groupmember!=""  && $email!="" && $joined_date!="" && $username!=""  && $password!="" ){
+    if($fullname!="" && $gender!="" && $teamleader!=""  && $email!=""  && $username!=""  && $password!="" ){
     //Insert into query pani ho 
-    $create_query="INSERT INTO `registration`( `fullname`, `age`, `address`, `gender`,  `groupmember`, `email`, `joined_date`, `username`, `password`) VALUES('$fullname', '$age', '$address', '$gender', '$groupmember','$email','$joined_date', '$username', '$password')";
+    $create_query="INSERT INTO `admins`( `fullname`, `address`, `gender`,  `groupmember`, `email`, `joined_date`, `username`, `password`) VALUES('$fullname', '$age', '$address', '$gender', '$groupmember','$email','$joined_date', '$username', '$password')";
     //result vane variable ma execute garounay
     $create_result= mysqli_query($conn,$create_query);
     if($create_result){
@@ -158,22 +155,6 @@ if(isset($_POST['submit'])){
                 </div><br>
                 <div class="row">
                     <div class="col-25">
-                        <label for="age">Age:</label>
-                        </div>
-                        <div class="col-75">
-                        <input type="text" name="age" required placeholder="Age in words">
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="address">Address:</label>
-                        </div>
-                        <div class="col-75">
-                        <input type="text" name="address" required placeholder="Parmanent Address">
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col-25">
                         <label for="gender">Gender</label>
                         </div>
                         <div class="col-75">
@@ -186,10 +167,10 @@ if(isset($_POST['submit'])){
                 </div><br>
                 <div class="row">
                     <div class="col-25">
-                        <label for="groupmember">Group Member:</label>
+                        <label for="teamleader">Team Leader:</label>
                         </div>
                         <div class="col-75">
-                        <select name="groupmember" id="">
+                        <select name="teamleader" id="">
                         <option value="Graphic Designing">Graphic Designing</option>
                             <option value="React Developers">React Developers </option>
                             <option value="MERN STACK">MERN STACK</option>
@@ -210,14 +191,6 @@ if(isset($_POST['submit'])){
                         </div>
                         <div class="col-75">
                         <input type="email" name="email" required placeholder="Please enter your current email address.">
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="joined_date">Joined Date (AD): </label>
-                        </div>
-                        <div class="col-75">
-                        <input type="date" name="joined_date" required >
                     </div>
                 </div><br>
                 <div class="row">

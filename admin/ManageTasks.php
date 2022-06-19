@@ -77,8 +77,8 @@
                 
                 <td><button type="button" name> <?php echo $data['status'];?>  </button></td>
                 <td>
-                    <a href="edittask.php?id=<?php echo $data ['id']; ?>"><button style="background-color:#106399;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">EDIT</button></a><br><br>
-                    <a href="../process/deletetask.php?id=<?php echo $data ['id'];?>"><button style="background-color:#630700;padding:10px 18px;border-radius:5px;color:white; cursor: pointer;">Delete</button></a>
+                    <a href="EditTask.php?id=<?php echo $data ['task_id']; ?>"><button style="background-color:#bd7706;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">EDIT</button></a><br><br>
+                    <a href="../process/deletetask.php?task_id=<?php echo $data ['task_id'];?>"><button style="background-color:#8f0909;padding:10px 18px;border-radius:8px;color:white; cursor: pointer;" onclick="myFunction()">Delete</button></a>
                 </td>
             </tr>
             <?php
@@ -97,7 +97,11 @@
                 </section>
         </div>
 
-       
+        <script>
+function myFunction() {
+  alert("A task deleted successfully! Please press ok to continue.");
+}
+</script>
     <script src="../assets/js/admin.js"></script>
     </body>
 

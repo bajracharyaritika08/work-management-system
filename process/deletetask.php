@@ -1,9 +1,9 @@
 <?php
 require ('../connection/config.php');
-if(isset($_GET['id']))
+if(isset($_GET['task_id']))
 {
-    $id = $_GET['id'];
-    $delete_query ="DELETE FROM tasks WHERE id=$id";
+    $task_id = $_GET['task_id'];
+    $delete_query ="DELETE  FROM tasks WHERE task_id=$task_id";
     $delete_result = mysqli_query($conn,$delete_query);
     if($delete_result){
         echo header ('Location: ../admin/managetasks.php?msg=dsuccess');
