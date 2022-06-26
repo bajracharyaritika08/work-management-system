@@ -41,7 +41,6 @@ if ($user_id == 1){
                 <li>
                     <a href="ManageUser.php">
                     <i class="uil uil-comments"></i>
-                        
                         <span class="link-name">Manage User </span>
                     </a>
                 </li>
@@ -52,13 +51,19 @@ if ($user_id == 1){
                     </a>
                 </li>
                 <li>
-                    <a href="askforhelp/help.php " target="blank">
+                    <a href="AskForHelp.php" >
                     <i class="uil  uil-lightbulb-alt"></i>
                         <span class="link-name">Ask for help?</span>
                     </a>
                 </li>
             </ul>
             <ul class="logout-mode">
+                <li>
+                    <a href="Profile.php">
+                        <i class="uil uil-user"></i>
+                        <span class="link-name">Profile</span>
+                    </a>
+                </li>
                 <li>
                     <a href="../index.php">
                         <i class="uil uil-signout"></i>

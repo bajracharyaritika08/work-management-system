@@ -85,8 +85,8 @@ if(isset($_POST['submit'])){
 }
 }
 ?>
-<form action="#" method="POST" enctype="multipart/form-data" style="color:white;padding:20px; >
-    <div class="row">
+<form action="#" method="POST" enctype="multipart/form-data" style="color:white;padding:20px; ">
+                <div class="row">
                     <div class="col-25">
                         <label for="fullname">Full Name:</label>
                         </div>
@@ -96,10 +96,10 @@ if(isset($_POST['submit'])){
                 </div><br>
                 <div class="row">
                     <div class="col-25">
-                        <label for="age">Age:</label>
+                        <label for="age">Age: </label>
                         </div>
                         <div class="col-75">
-                        <input type="text" name="age" required placeholder="Age in words">
+                        <input type="text" name="age" value="<?php echo $age?>" >
                     </div>
                 </div><br>
                 <div class="row">
@@ -107,7 +107,7 @@ if(isset($_POST['submit'])){
                         <label for="address">Address:</label>
                         </div>
                         <div class="col-75">
-                        <input type="text" name="address" required placeholder="Parmanent Address">
+                        <input type="text" name="address" required value="<?php echo $address?>">
                     </div>
                 </div><br>
                 <div class="row">
@@ -116,9 +116,27 @@ if(isset($_POST['submit'])){
                         </div>
                         <div class="col-75">
                         <select name="gender" id="">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Others">Others</option>
+                        <?php
+            if($gender=="Male"){
+                ?>
+                    <option value="Male" selected><?php echo $gender;?></option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                    <?php
+            }else if($gender=="Female"){
+                ?>
+                    <option value="Female" selected><?php echo $gender;?></option>
+                    <option value="Male">Male</option>
+                    <option value="Others">Others</option>
+                    <?php
+            }else{
+                ?>
+                    <option value="<?php echo $gender;?>" selected></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <?php
+            }
+        ?>
                         </select >
                     </div>
                 </div><br>
@@ -127,7 +145,7 @@ if(isset($_POST['submit'])){
                         <label for="email">Email:</label>
                         </div>
                         <div class="col-75">
-                        <input type="email" name="email" required placeholder="Please enter your current email address.">
+                        <input type="email" name="email" required value="<?php echo $email?>">
                     </div>
                 </div><br>
                 <div class="row">
@@ -135,7 +153,7 @@ if(isset($_POST['submit'])){
                         <label for="joined_date">Joined Date (AD): </label>
                         </div>
                         <div class="col-75">
-                        <input type="date" name="joined_date" required >
+                        <input type="date" name="joined_date" value="<?php echo $joined_date?>" >
                     </div>
                 </div><br>
                 <div class="row">
@@ -143,7 +161,7 @@ if(isset($_POST['submit'])){
                         <label for="username">Username:</label>
                         </div>
                         <div class="col-75">
-                        <input type="text" name="username" required placeholder="For eg: kamchettra123">
+                        <input type="text" name="username" required value="<?php echo $username?>">
                     </div>
                 </div><br>
                 <div class="row">
@@ -151,7 +169,7 @@ if(isset($_POST['submit'])){
                         <label for="password">Password:</label>
                         </div>
                         <div class="col-75">
-                        <input type="password" name="password" required placeholder="For eg: Kamcheetra@123"><br><br>
+                        <input type="text" name="password" required value="<?php echo $password?>"><br><br>
                     </div>
                 </div>
                 <button type="submit" name="submit" class="submit-btn" style="background-color:#004f00;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">Submit</button>

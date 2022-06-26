@@ -2,8 +2,6 @@
 <?php
 session_start();
 if(isset($_SESSION['email'])){
-
-
 ?>
 
 
@@ -19,76 +17,13 @@ if(isset($_SESSION['email'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/DashBoard.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <title>Admin Dashboard Panel</title>
 </head>
 <style>
-    .flex-container {
-  display: flex;
-  flex-direction: row;
-  font-size: 30px;
-  text-align: center;
-}
-
-.flex-item-left {
-  background-color: transparent;
-  padding: 10px;
-  flex: 33.33%;
-  margin:20px;
-  border-style:solid;
-  border-color:grey;
-  height:200px;
-  border-radius:10px;
-  color:grey;
-}
-
-.flex-item-right {
-  background-color: transparent;
-  padding: 10px;
-  flex: 33.33%;
-  margin:20px;
-  border-style:solid;
-  border-color:grey;
-  height:200px;
-  border-radius:10px;
-  color:grey;
-}
-.flex-item-middle{
-  background-color: transparent;
-  padding: 10px;
-  flex: 33.33%;
-  margin:20px;
-  border-style:solid;
-  border-color:grey;
-  height:200px;
-  border-radius:10px;
-  color:grey;
-
-}
-@media (max-width: 800px) {
-  .flex-container {
-    flex-direction: column;
-  }
-}
-.feedback-btn{
-    background-color:transparent;
-    border-radius:5px;
-    color:grey;
-    padding: 12px;
-  border: 3px solid #6e6e6e;
-  cursor: pointer;
-    
-}
-.feedback-btn:hover{
-    background-color:#4a4a4a;
-    color:white;
-}
-button a{
-    text-decoration: none;
-    color:grey;
-}
 
 </style>
 <body>
