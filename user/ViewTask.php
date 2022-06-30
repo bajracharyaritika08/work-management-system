@@ -20,10 +20,6 @@
     <section class="dashboard" id="dasbboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
-            </div>
         </div>
         <div class="dash-content">
             <div class="overview">
@@ -31,20 +27,6 @@
                     <i class="uil uil-tachometer-fast-alt"></i>
                     <span class="text">Tasks</span>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
 <table style="width:100%; color:grey;" border="2px" >
         <thead>
             <tr>
@@ -53,7 +35,9 @@
                 <th>Task Priority</th>
                 <th>Task Details</th>
                 <th>Deadline</th>
+                <th>Assigned Department</th>
                 <th>Task Status</th>
+                <th>Modify Task</th>
             </tr>
         </thead>
         <tfoot>
@@ -64,7 +48,10 @@
                 <th>Task Priority</th>
                 <th>Task Details</th>
                 <th>Deadline</th>
+                <th>Assigned Department</th>
                 <th>Task Status</th>
+                <th>Modify Task</th>
+
             </tr>
         </tfoot>
         <tbody>
@@ -82,8 +69,13 @@
                 <td><?php echo $data['priority'];?></td>
                 <td><?php echo $data['details'];?></td>
                 <td><?php echo $data['deadline'];?></td>
-                
-                <td><button type="button" name> <?php echo $data['status'];?>  </button></td>
+                <td><?php echo $data['assigned_to'];?></td>
+                <td><?php echo $data['status'];?>  </td>
+                <td>
+                <a href="EditTaskss.php?id=<?php echo $data ['task_id']; ?>"><button style="background-color:#bd7706;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">EDIT</button></a><br><br>
+
+                </td>
+
             </tr>
             <?php
             }

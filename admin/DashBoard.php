@@ -52,10 +52,16 @@ if(isset($_SESSION['email'])){
                  </div>      
             </div>  
             <div class="flex-container">
+
                   <div class="flex-item-left">
-                    <h5>Active Admins</h5><hr style="color:black;">
+                    <h5>Active Admins</h5><hr style="color:black;"><br>
                     <p style="font-size:large;">Active Admins</p>
-                    <button class="feedback-btn"><a href="Registration.php">Click to visit</a></button>
+                    <?php
+                      $query="SELECT admin_id from admins order by admin_id";
+                      $query_run =mysqli_query($conn, $query);
+                      $row = mysqli_num_rows($query_run);
+                      echo "<p> $row</p>";
+                  ?>
                   </div><br>
                   <div class="flex-item-middle">
                   <h5>Active Users</h5><hr style="color:black;"><br>
@@ -69,12 +75,7 @@ if(isset($_SESSION['email'])){
                   
                   </p>
                   </div><br>
-                  <!-- <div class="flex-item-right">
-                  <h5>Upcomming Holidays</h5><hr style="color:black;"><br>
-                    <p style="font-size:large;">Event:</p>
-                    <p style="font-size:large;">Date:</p>
-                    
-                  </div> -->
+                  
                 </div>  
                 </section>
         </div> 

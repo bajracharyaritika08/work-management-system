@@ -29,9 +29,8 @@ if(isset($_SESSION['email'])){
                     <span class="text">Ask For Help</span>
             </div>
               <div class="ask-container" style="color:grey;text-align: justify;">
-                <h3 >Hello! <?php echo @$_SESSION['email'];?></h3><br>
+                
                 <p>Since, you have sucessfully logged in to the system, here is the user manual is you have any problem while using this application or even if you are new to this. </p><br>
-                <p>You can also visit our website: <a href="#" style="color:green;text-decoration:none;">www.kamchettra.com</a></p><br>
                 <p>In the side navbar you can find many options such as:</p><br>
                 <div class="nav-section">
                 <i class="uil uil-estate"></i>

@@ -28,26 +28,26 @@ if ($user_id == 1){
                 </li>
                 <li>
                     <a href="ViewTask.php">
-                        <i class="uil uil-files-landscapes"></i>
+                        <i class="uil uil-book-open"></i>
                         <span class="link-name">View Task</span>
                     </a>
                 </li>
                 <li>
                     <a href="leave.php">
-                    <i class="uil uil-location-pin-alt"></i>
+                    <i class="uil uil-fast-mail"></i>
                         <span class="link-name">Leaves</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                    <i class="uil  uil-lightbulb-alt"></i>
+                    <a href="../user/AskForHelp.php">
+                    <i class="uil uil-clipboard-alt"></i>
                         <span class="link-name">Ask for help?</span>
                     </a>
                 </li>
             </ul>
             <ul class="logout-mode">
                 <li>
-                    <a href="#">
+                    <a href="../user/Index.php">
                         <i class="uil uil-signout"></i>
                         <span class="link-name">Logout</span>
                     </a>

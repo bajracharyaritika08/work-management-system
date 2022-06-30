@@ -14,6 +14,7 @@ if(isset($_GET['id'])){
     $details = $row['details'];
     $deadline = $row['deadline'];
     $status = $row['status'];
+    $remarks = $row['remarks'];
 }
 ?>
 
@@ -57,10 +58,11 @@ if(isset($_POST['submit'])){
     $details = $_POST['details'];
     $deadline = $_POST['deadline'];
     $status = $_POST['status'];
+    $remarks = $_POST['remarks'];
 
-    if($title!="" && $priority!="" && $details!="" && $deadline!="" && $status!=""){
+    if($title!="" && $priority!="" && $details!="" && $deadline!="" && $status!="" && $remarks!=""){
     //Update query yeta lekheko 
-    $edit_query ="UPDATE tasks SET title='$title', priority='$priority', details='$details', deadline='$deadline', status='$status' WHERE task_id=$task_id";
+    $edit_query ="UPDATE tasks SET title='$title', priority='$priority', details='$details', deadline='$deadline', status='$status', remarks='$remarks' WHERE task_id=$task_id";
     $edit_result= mysqli_query($conn,$edit_query);
     if($edit_result){
         echo "Task Updated successufuly";
@@ -109,7 +111,7 @@ if(isset($_POST['submit'])){
     <?php
             if($status=="New"){
                 ?>
-                    <option value="New" selected><?php echo $status;?></option>
+                    <option value="New"  selected><?php echo $status;?></option>
                     <option value="Progess">Progress</option>
                     <option value="Done">Done</option>
                     <option value="Cancelled">Cancelled</option>
@@ -123,9 +125,9 @@ if(isset($_POST['submit'])){
                     <?php
             }else if ($status=="Done"){
                 ?>
-                    <option value="New" selected><?php echo $status;?></option>
+                    <option value="Done" selected><?php echo $status;?></option>
                     <option value="Progess">Progress</option>
-                    <option value="Done">Done</option>
+                    <option value="New">New</option>
                     <option value="Cancelled">Cancelled</option>
                 <?php
             }else{
@@ -137,7 +139,10 @@ if(isset($_POST['submit'])){
                     <?php
             }
         ?>
-    </select ><br><br>
+         </select ><br><br>
+         <label for="tasktitle">Task Remarks:</label>
+    <textarea name="remarks" id="" cols="10" rows="5"  required><?php echo $remarks; ?></textarea><br><br>
+   
     <button type="submit" name="submit">Submit</button>
 </form>
 

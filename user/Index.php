@@ -14,7 +14,7 @@ session_start();
 <body style="background: url(background.jpg);background-size:cover;background-repeat:no-repeat;background-position: center center;">
    
     <div class="wrapper">
-        <div class="title">Welcome Back!</div>
+        <div class="title">HELLO USER!</div>
         <form method="POST"  action="UserValidation.php">
             <div class="field">
                 <input type="text" name="email" required  >

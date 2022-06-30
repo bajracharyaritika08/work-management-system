@@ -105,24 +105,19 @@ button a{
                     <span class="text">Welcome to KAM- क्षॆत्र </span>
             </div>   
             <div style="color:grey;">
-            <div class="flex-container">
-                  <div class="flex-item-left">
-                    <h5>Feedbacks</h5><hr style="color:black;"><br>
-                    <p style="font-size:large;">Number of feedbacks:</p>
-                    <button class="feedback-btn"><a href="Registration.php">Click to visit</a></button>
+            
+            <div class="flex-item-middle">
+                  <h5> Tasks</h5><hr style="color:black;"><br>
+                    <p style="font-size:18px;">Number of tasks:</p>
+                  <?php
+                      $query="SELECT task_id from tasks order by task_id";
+                      $query_run =mysqli_query($conn, $query);
+                      $row = mysqli_num_rows($query_run);
+                      echo "<p> $row</p>";
+                  ?>
+                  
+                  </p>
                   </div><br>
-                  <div class="flex-item-middle">
-                  <h5>Active Users</h5><hr style="color:black;"><br>
-                    <p style="font-size:large;">Active Users:</p>
-                    <button class="feedback-btn"><a href="Registration.php">Click to visit</a></button>
-                  </div><br>
-                  <div class="flex-item-right">
-                  <h5>Upcomming Holidays</h5><hr style="color:black;"><br>
-                    <p style="font-size:large;">Event:</p>
-                    <p style="font-size:large;">Date:</p>
-                    
-                  </div>
-                </div>  
             </div>      
             </div>    
                 </section>

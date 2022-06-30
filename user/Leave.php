@@ -122,6 +122,9 @@ button a{
                 <th>Reasons for leave</th>
                 <th>From</th>
                 <th>To</th>
+                <th>Remarks</th>
+                <th>Message</th>
+                <th>Edit Leave</th>
                 
             </tr>
         </thead>
@@ -133,12 +136,14 @@ button a{
                 <th>Reasons for leave</th>
                 <th>From</th>
                 <th>To</th>
-                
+                <th>Remarks</th>
+                <th>Message</th>
+                <th>Edit Leave</th>
             </tr>
         </tfoot>
         <tbody>
         <?php
-            $select_query ="SELECT * FROM tasks ORDER BY created_at DESC";
+            $select_query ="SELECT * FROM leave_records ORDER BY leave_id DESC";
             $select_result =mysqli_query($conn, $select_query);
             $count = 0;
             while($data = mysqli_fetch_array($select_result))
@@ -149,10 +154,13 @@ button a{
                 <td><?php echo  $count ?></td>
                 <td><?php echo $data['leave_title'];?></td>
                 <td><?php echo $data['leave_details'];?></td>
-                <td><?php echo $data['form'];?></td>
-                <td><?php echo $data['upto'];?></td>
-                
-                
+                <td><?php echo $data['date_from'];?></td>
+                <td><?php echo $data['date_to'];?></td>
+                <td><?php echo $data['status'];?></td>
+                <td><?php echo $data['leave_remarks'];?></td>
+                <td>
+                    <a href="../process/DeleteLeave.php?task_id=<?php echo $data ['leave_id'];?>"><button style="background-color:#8f0909;padding:10px 18px;border-radius:8px;color:white; cursor: pointer;" onclick="myFunction()">Delete</button></a>
+                </td>
             </tr>
             <?php
             }

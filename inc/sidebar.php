@@ -34,38 +34,33 @@ if ($user_id == 1){
                 </li>
                 <li>
                     <a href="Managetasks.php">
-                        <i class="uil uil-chart"></i>
+                        <i class="uil uil-comment-edit"></i>
                         <span class="link-name">Manage task</span>
                     </a>
                 </li>
                 <li>
                     <a href="ManageUser.php">
-                    <i class="uil uil-comments"></i>
+                    <i class="uil uil-users-alt"></i>
                         <span class="link-name">Manage User </span>
                     </a>
                 </li>
                 <li>
-                    <a href="ManageAdmin.php">
-                    <i class="uil  uil-shield-exclamation"></i>
-                        <span class="link-name">Manage Admin </span>
+                    <a href="LeaveRecords.php">
+                        <i class="uil uil-fast-mail"></i>
+                        <span class="link-name">Leave Requests</span>
                     </a>
                 </li>
                 <li>
                     <a href="AskForHelp.php" >
-                    <i class="uil  uil-lightbulb-alt"></i>
+                    <i class="uil uil-clipboard-alt"></i>
                         <span class="link-name">Ask for help?</span>
                     </a>
                 </li>
             </ul>
             <ul class="logout-mode">
+                
                 <li>
-                    <a href="Profile.php">
-                        <i class="uil uil-user"></i>
-                        <span class="link-name">Profile</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="../index.php">
+                    <a href="../AdminIndex.php">
                         <i class="uil uil-signout"></i>
                         <span class="link-name">Logout</span>
                     </a>

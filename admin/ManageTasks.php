@@ -43,6 +43,7 @@
                 <th>Assigned To</th>
                 <th>Task Status</th>
                 <th>Action</th>
+                <th>Remarks</th>
             </tr>
         </thead>
         <tfoot>
@@ -56,6 +57,7 @@
                 <th>Assigned To</th>
                 <th>Task Status</th>
                 <th>Action</th>
+                <th>Remarks</th>
             </tr>
         </tfoot>
         <tbody>
@@ -75,11 +77,12 @@
                 <td><?php echo $data['deadline'];?></td>
                 <td><?php echo $data['assigned_to'];?></td>
                 
-                <td><button type="button" name> <?php echo $data['status'];?>  </button></td>
+                <td><?php echo $data['status'];?> </td>
                 <td>
                     <a href="EditTask.php?id=<?php echo $data ['task_id']; ?>"><button style="background-color:#bd7706;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">EDIT</button></a><br><br>
                     <a href="../process/deletetask.php?task_id=<?php echo $data ['task_id'];?>"><button style="background-color:#8f0909;padding:10px 18px;border-radius:8px;color:white; cursor: pointer;" onclick="myFunction()">Delete</button></a>
                 </td>
+                <td><?php echo $data['remarks'];?></td>
             </tr>
             <?php
             }

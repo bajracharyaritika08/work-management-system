@@ -2,14 +2,14 @@
 <?php
 //When a create a task form is submitted
 if(isset($_POST['submit'])){
-    $leave_title = $_POST['title'];
-    $leave_details = $_POST['details'];
-    $from = $_POST['from'];
-    $upto = $_POST['to'];
+    $leave_title = $_POST['leave_title'];
+    $leave_details = $_POST['leave_details'];
+    $date_from = $_POST['date_from'];
+    $date_to = $_POST['date_to'];
 
-    if($leave_title!="" && $leave_details!="" && $from!="" && $upto!=""){
+    if($leave_title!="" && $leave_details!="" && $date_from!="" && $date_to!=""){
     //Insert into query pani ho 
-    $create_query="INSERT INTO leave_records(leave_id,leave_details,form,upto) VALUES ('$leave_title','$leave_details','$from','$upto')";
+    $create_query="INSERT INTO leave_records (leave_title,leave_details,date_from,date_to ) VALUES ('$leave_title','$leave_details','$date_from','$date_to')";
     //result vane variable ma execute garounay
     $create_result= mysqli_query($conn,$create_query);
     if($create_result){
@@ -138,10 +138,10 @@ button a{
                 <form action="#" method="POST" enctype="multipart/form-data"  style="color:grey;">
                 <div class="row">
                     <div class="col-25">
-                        <label for="leavetitle">Reason for Leave:</label>
+                        <label for="leavetitle">Leave Title:</label>
                         </div>
                         <div class="col-75">
-                        <input type="text" name="leavetitle" required>
+                        <input type="text" name="leave_title" required>
                     </div>
                 </div>
                 <div class="row">
@@ -157,7 +157,7 @@ button a{
                         <label for="form">From:</label>
                         </div>
                         <div class="col-75">
-                        <input type="date" name="form" required><br><br>
+                        <input type="date" name="date_from" required><br><br>
                           </div>
                 </div>
                 <div class="row">
@@ -165,7 +165,7 @@ button a{
                         <label for="upto">To:</label>
                         </div>
                         <div class="col-75">
-                        <input type="date" name="upto" required><br><br>
+                        <input type="date" name="date_to" required><br><br>
                         <button type="submit" name="submit" class="submit-btn" style="background-color:#029609;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">Submit</button>
                     </div>
                 </div>
