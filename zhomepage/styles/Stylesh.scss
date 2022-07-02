@@ -1,0 +1,374 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    ;
+}
+
+.nav-top {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    padding: 8px;
+    justify-content: space-evenly;
+    color: rgb(110, 110, 110);
+    letter-spacing: 2px;
+}
+
+hr {
+    margin-right: 140px;
+    margin-left: 140px;
+    margin-top: 8px;
+}
+
+.logo {
+    display: flex;
+    width: 50px;
+}
+
+.bookbtn {
+    padding: 10px;
+    background-color: indianred;
+    color: whitesmoke;
+    border: 0;
+    top: 20px;
+}
+
+.bookbtn:hover {
+    cursor: pointer;
+    background-color: rgb(177, 79, 79);
+}
+
+.far {
+    color: rgb(0, 88, 34);
+}
+
+.fab {
+    padding-left: 5px;
+}
+
+.fab:hover {
+    color: rgb(182, 74, 74);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 11vh;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.nav-links {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.nav-links a {
+    color: rgb(2, 2, 2);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.nav-links a:hover {
+    color: rgb(241, 103, 103);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    margin: 3px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width:1024px) {
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        color: rgb(255, 255, 255);
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+    }
+    nav {
+        z-index: 999;
+        width: 100%;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg)translate(-5px, -6px);
+}
+
+// hero section
+.hero-image {
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: grey;
+    line-height: 1.6;
+}
+
+@media only screen and (max-width: 800px) {
+    .hero-text h1 {
+        font-size: 40px;
+    }
+}
+
+.img-container {
+    background-image: url("zhomepage/images/heroimage.png");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+/* <!-- Here starts the content --> */
+
+.specifica {
+    text-align: center;
+    padding: 50px;
+    font-family: "Open Sans", sans-serif;
+    color: grey;
+}
+
+.specification {
+    color: rgb(230, 46, 46);
+}
+
+.afterspecs {
+    width: 700;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    margin-left: 550px;
+    margin-right: 550px;
+}
+
+.infohotel {
+    font-family: "Open Sans", sans-serif;
+    padding: 12px;
+    line-height: 1.6;
+}
+
+.hero-texts {
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.img-container {
+    background-image: url("zhomepage/images/heroimag.png");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-texted {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: grey;
+    line-height: 1.6;
+}
+
+@media only screen and (max-width: 800px) {
+    .hero-text h1 {
+        font-size: 40px;
+    }
+}
+
+.card-flex {
+    display: flex;
+    justify-content: center;
+    line-height: 1.8;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 100px;
+}
+
+.column1,
+.column2,
+.column3 {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.uil {
+    font-size: 40px;
+    padding: 15px;
+}
+
+.uil-arrow-growth {
+    color: rgb(118, 0, 0);
+}
+
+.uil-clipboard-notes {
+    color: rgb(194, 194, 10);
+}
+
+.uil-crosshairs {
+    color: rgb(0, 203, 203);
+}
+
+
+/* CARD */
+
+.explore {
+    background-color: rgb(241, 236, 236);
+    height: 80%;
+}
+
+.exploresp {
+    padding-top: 50px;
+    padding-left: 55px;
+    height: 55px;
+}
+
+.budget {
+    padding-top: 50px;
+    padding-left: 55px;
+    left: 0;
+    font-weight: bolder;
+}
+
+.card {
+    display: flex;
+}
+
+.card1 {
+    height: 10%;
+    width: 30%;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    padding: 30px;
+    margin: 50px;
+}
+
+.card01 {
+    height: 10%;
+    width: 100%;
+}
+
+.budgeth2 {
+    padding: 15px;
+}
+
+.dividerr {
+    width: 50px;
+    height: 2px;
+    margin-left: 15px;
+    background-color: rgb(114, 114, 114);
+}
+
+.content-btn {
+    display: flex;
+    padding-top: 15px;
+}
+
+.btn-dtls {
+    background-color: #b11b1b;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+    font-weight: bolder;
+    font-size: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.contact-container {
+    background-image: url("zhomepage/images/heroimag.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 50px;
+}
+
+.services-holder {
+    height: auto;
+}
