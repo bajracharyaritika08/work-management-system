@@ -72,9 +72,9 @@ body, html {
         </div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#aboutus">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contactus">Contact</a></li>
         </ul>
         <div class="burger">
             <div class="line1"></div>
@@ -88,7 +88,7 @@ body, html {
     <p>
     <i style="font-size:15px;">"Goals are dreams with deadlines."</i>
     </p><br>
-    <a href="#"><button class="bookbtn">GET STARTED !</button></a>
+    <a href="#"><button class="bookbtn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">GET STARTED !</button></a>
     <!-- <a href="AdminIndex.php"><button style="background-color:transparent;padding:15px 28px;border-radius:5px;color:white; cursor: pointer;font-size:18px;transition: all 0.5s;">ADMIN</button></a> &nbsp;&nbsp;
     <a href="user/Index.php"><button style="background-color:transparent;padding:15px 28px;border-radius:5px;color:white; cursor: pointer;font-size:18px;transition: all 0.5s;">USER</button></a>
           -->
@@ -98,7 +98,7 @@ body, html {
 
 </div>
 <!-- Here starts the content -->
-<div class="specifica">
+<div class="specifica" id="aboutus">
         <h1 class="specific"> Why <span class="specification"> KAM-क्षॆत्र?</span> </h1>
 </div>
 <!-- Here starts the card section -->
@@ -122,7 +122,7 @@ body, html {
   </div>
 </div>
 <!-- services -->
-<div class="services-holder">
+<div class="services-holder" id="services">
 <div class="explore">
         <h1 class="exploresp">EXPLORE OUR <span class="specification">SERVICES</span> 
         </h1>
@@ -163,11 +163,108 @@ body, html {
     </div>
     </div>
 <!-- Contact us page starts here-->
-<div class="contact-container">
+<div class="contact-container" id="contactus">
 <h1 class="exploresp">CONTACT <span class="specification">US</span><i class="uil uil-envelope-alt"></i> </h1> <br><br><br><br>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467.9361578368045!2d85.30845253927635!3d27.67453807502398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1833e6b3e205%3A0x76ca1abd0d699e69!2sDAV%20College!5e0!3m2!1sen!2snp!4v1656787303855!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="con-map">
+  <div class="rows">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467.9361578368045!2d85.30845253927635!3d27.67453807502398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1833e6b3e205%3A0x76ca1abd0d699e69!2sDAV%20College!5e0!3m2!1sen!2snp!4v1656787303855!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  </div>
+  <?php require('connection/config.php')?>
+
+  <div class="rows container">
+
+    <form method="POST" enctype="multipart/form-data">
+      <h2>To get in touch.</h2>
+      <?php
+//When a create a task form is submitted
+
+ 
+if(isset($_POST['contact-form'])){
+    $fname = $_POST['fname'];
+    $countries = $_POST['countries'];
+    $longtextmessages =$_POST['longtextmessages'];
+    if($fname!="" && $countries!="" && $longtextmessages!=""){
+    //Insert into query pani ho 
+    $create_query="INSERT INTO messagess (fname, nationality, longtextmessages) VALUES ('$fname','$countries','$longtextmessages')";
+    //result vane variable ma execute garounay
+    $create_result= mysqli_query($conn,$create_query);
+    if($create_result){
+        echo "<div class='uil'>Working</div>";
+    }
+    else{
+        echo "Couldn't perform the requested task.";
+    }
+}else{
+    echo 'Please fill all the datas';
+}
+}
+?>
+      <input type="text" name="fname" placeholder="Please enter your full name.">
+      <select name="countries" id="countries"></select>
+      <textarea id="subject" name="longtextmessages" placeholder="Write something.." style="height:200px"></textarea>
+      <button class="bookbtn" value="submit" name="contact-form">Submit</button>
+  </div>
+</div>
+</div>
+<div class="footer">
+  <p>Copyright KAM CHETTRA © 2022</p>
 </div>
 <!-- Contact us page ends here-->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    <p class="continueas">Continue As:</p><br>
+    <div class="btns-container">
+    <a href="AdminIndex.php">ADMIN </a>
+    <a href="user/Index.php">USER </a>
+
+    </div>
+   
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+const selectDrop = document.querySelector('#countries');
+// const selectDrop = document.getElementById('countries');
+
+
+fetch('https://restcountries.com/v3.1/all').then(res => {
+    return res.json();
+}).then(data => {
+    let output = "";
+    data.forEach(country => {
+        output += `
+    
+    <option value="${country.name.common}">${country.name.common}</option>`;
+    console.log(country.name.common);
+    })
+
+    selectDrop.innerHTML = output;
+}).catch(err => {
+    console.log(err);
+})
+
+
+});
+</script>
 <script src="zhomepage/js/apps.js"></script>
 </body>
 </html>

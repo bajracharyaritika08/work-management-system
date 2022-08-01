@@ -31,8 +31,9 @@ if(isset($_GET['id'])){
     <link rel="stylesheet" href="../assets/css/style.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/logokam.png">
 
-    <title>Admin Dashboard Panel</title>
+    <title>Edit User</title>
 </head>
 <style>
     label{
@@ -44,10 +45,6 @@ if(isset($_GET['id'])){
     <section class="dashboard" id="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
-            </div>
         </div>
         <div class="dash-content">
             <div class="overview">

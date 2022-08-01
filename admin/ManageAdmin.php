@@ -5,28 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Users</title>
+    <title>Manage Admin</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/ManageAdmin.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/logokam.png">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 </head>
-
-<style>
-
-</style>
-
 
 <body>
 <?php include('../inc/sidebar.php')?>
 <section class="dashboard" id="dasbboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here..." name="search" id="search" onkeyup="searchFun()">
-            </div>
         </div>
         <div class="dash-content">
             <div class="overview">
@@ -63,8 +55,7 @@
                         </div>
                         <div class="column" style="background-color:transparent;font-size:large;">
                         <p>Modify User</p><br>
-                        <a href="EditUser.php?id=<?php echo $data ['admin_id']; ?>"><button style="background-color:#bd7706;padding:10px 15px;border-radius:5px;color:white; cursor: pointer;">View User Details</button></a>
-                    <a href="deleteusers.php/?reg_id=<?php echo $data ['admin_id'];?>"><button style="background-color:#8f0909;padding:10px 18px;border-radius:5px;color:white; cursor: pointer;" onclick="myFunction()">Delete User</button></a>
+                    <a href="DeleteAdmin.php/?reg_id=<?php echo $data ['admin_id'];?>"><button style="background-color:#8f0909;padding:10px 18px;border-radius:5px;color:white; cursor: pointer;">Delete User</button></a>
 
                         </div>
                         </div>
@@ -79,7 +70,7 @@
 </div> 
 <script>
 function myFunction() {
-  alert("User Deleted Sucessfully! Press ok to continue.");
+  alert("Admin Deleted Sucessfully! Press ok to continue.");
 }
 </script>
 <script src="../assets/js/admin.js"></script>

@@ -29,8 +29,8 @@ if(isset($_GET['id'])){
     <link rel="stylesheet" href="../assets/css/style.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-    <title>Admin Dashboard Panel</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/logokam.png">
+    <title>Edit Task</title>
 </head>
 
 <body>

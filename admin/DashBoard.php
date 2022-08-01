@@ -20,6 +20,7 @@ if(isset($_SESSION['email'])){
     <link rel="stylesheet" href="../assets/css/DashBoard.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/logokam.png">
 
     <title>Admin Dashboard Panel</title>
 </head>

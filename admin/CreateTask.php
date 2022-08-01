@@ -4,12 +4,12 @@
 if(isset($_POST['submit'])){
     $title = $_POST['title'];
     $priority = $_POST['priority'];
-    $assigned_to =$_POST['assigned_to'];
+    $fullname =$_POST['fullname'];
     $details = $_POST['details'];
     $deadline = $_POST['deadline'];
-    if($title!="" && $priority!="" && $assigned_to!="" && $details!="" && $deadline!="" ){
+    if($title!="" && $priority!="" && $fullname!="" && $details!="" && $deadline!="" ){
     //Insert into query pani ho 
-    $create_query="INSERT INTO tasks(title, priority, assigned_to, details, deadline) VALUES ('$title','$priority','$assigned_to','$details','$deadline')";
+    $create_query="INSERT INTO tasks(title, priority, assigned_to, details, deadline) VALUES ('$title','$priority','$fullname','$details','$deadline')";
     //result vane variable ma execute garounay
     $create_result= mysqli_query($conn,$create_query);
     if($create_result){
@@ -34,9 +34,11 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/CreateTask.css">
     <!----===== Iconscout CSS ===== -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/logokam.png">
+
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <title>Admin Dashboard Panel</title>
+    <title>Create Task.</title>
 </head>
 <body>
     
@@ -77,22 +79,20 @@ if(isset($_POST['submit'])){
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="assigned_to">Assigned To:</label>
+                        <label for="fullname">Assigned To:</label>
                         </div>
                         <div class="col-75">
-                        <select name="assigned_to" id="">
-                            <option value="All">All</option>
-                            <option value="Graphic Designing">Graphic Designing</option>
-                            <option value="React Developers">React Developers </option>
-                            <option value="MERN STACK">MERN STACK</option>
-                            <option value="ANGULAR JS/ Vue JS">ANGULAR JS/ Vue JS</option>
-                            <option value="Django Team">Django Team</option>
-                            <option value="Digital Marketing">Digital Marketing</option>
-                            <option value="Team Youtube">Team Youtube</option>
-                            <option value="Account Department">Account Department</option>
-                            <option value="Front Desk Team">Front Desk Team</option>
-                            <option value="Call Center Team">Call Center Team</option>
-                            <option value="React Native / Flutter ">React Native / Flutter </option>
+                            <?php
+                            $resultSet = $conn->query("Select fullname FROM registration");
+                            ?>
+                        <select name="fullname" id="">
+                            <?php
+                            while($rows = $resultSet->fetch_assoc())
+                            {
+                                $fullname = $rows ['fullname'];
+                                echo "<option value='$fullname'>$fullname</option>";
+                            }
+                            ?>
                         </select >
                     </div>
                 </div>

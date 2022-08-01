@@ -45,6 +45,12 @@ if ($user_id == 1){
                     </a>
                 </li>
                 <li>
+                    <a href="ManageAdmin.php">
+                    <i class="uil uil-user-check"></i>
+                        <span class="link-name">Manage Admin</span>
+                    </a>
+                </li>
+                <li>
                     <a href="LeaveRecords.php">
                         <i class="uil uil-fast-mail"></i>
                         <span class="link-name">Leave Requests</span>

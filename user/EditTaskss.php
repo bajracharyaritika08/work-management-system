@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
     
     $status = $_POST['status'];
 
-    if($details!="" && $status!=""){
+    if($remarks!="" && $status!=""){
     //Update query yeta lekheko 
     $edit_query ="UPDATE tasks SET remarks='$remarks', status='$status' WHERE task_id=$task_id";
     $edit_result= mysqli_query($conn,$edit_query);

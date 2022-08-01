@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-    <title>Admin Dashboard Panel</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/logokam.png">
+    <title>Manage Tasks</title>
 </head>
 
 <body>
@@ -20,10 +20,6 @@
     <section class="dashboard" id="dasbboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
-            </div>
         </div>
         <div class="dash-content">
             <div class="overview">

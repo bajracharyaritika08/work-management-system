@@ -32,9 +32,11 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/CreateAdmin.css">
     <!----===== Iconscout CSS ===== -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/logokam.png">
+
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <title>Admin Dashboard Panel</title>
+    <title>Create Admin </title>
 </head>
 
 <body>
