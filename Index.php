@@ -190,7 +190,7 @@ if(isset($_POST['contact-form'])){
     //result vane variable ma execute garounay
     $create_result= mysqli_query($conn,$create_query);
     if($create_result){
-        echo "<div class='uil'>Working</div>";
+        echo "<h4>Submitted.</h4>";
     }
     else{
         echo "Couldn't perform the requested task.";
